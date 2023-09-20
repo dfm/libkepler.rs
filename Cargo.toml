@@ -1,8 +1,13 @@
-[package]
-name = "kepler"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+members = ["crates/*"]
 
-[dependencies]
-num-traits = "0.2.16"
-thiserror = "1.0.35"
+[workspace.package]
+version = "0.1.0"
+authors = ["Dan Foreman-Mackey <dfm@dfm.io>"]
+edition = "2021"
+homepage = "https://github.com/dfm/libkepler.rs"
+repository = "https://github.com/dfm/libkepler.rs"
+license = "Apache-2.0"
+
+[workspace.dependencies]
+libkepler-proc-macro = { path = "crates/libkepler-proc-macro" }

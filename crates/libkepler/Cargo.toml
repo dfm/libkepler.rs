@@ -1,0 +1,15 @@
+[package]
+name = "libkepler"
+version = { workspace = true }
+authors = { workspace = true }
+edition = { workspace = true }
+homepage = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
+
+[dependencies]
+num-traits = "0.2.16"
+libkepler-proc-macro = { workspace = true }
+
+[dev-dependencies]
+approx = "0.5.1"
