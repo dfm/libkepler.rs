@@ -10,4 +10,6 @@ repository = "https://github.com/dfm/libkepler.rs"
 license = "Apache-2.0"
 
 [workspace.dependencies]
-libkepler-proc-macro = { path = "crates/libkepler-proc-macro" }
+num-traits = "0.2.16"
+approx = "0.5.1"
+rstest = "0.18.2"

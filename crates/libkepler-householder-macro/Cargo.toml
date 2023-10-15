@@ -1,5 +1,5 @@
 [package]
-name = "libkepler"
+name = "libkepler-householder-macro"
 version = { workspace = true }
 authors = { workspace = true }
 edition = { workspace = true }
@@ -7,9 +7,11 @@ homepage = { workspace = true }
 repository = { workspace = true }
 license = { workspace = true }
 
-[dependencies]
-num-traits = { workspace = true }
-libkepler-householder = { path = "../libkepler-householder" }
+[lib]
+proc-macro = true
 
-[dev-dependencies]
-approx = { workspace = true }
+[dependencies]
+itertools = "0.11.0"
+proc-macro2 = "1.0.67"
+quote = "1.0.33"
+syn = "2.0.37"

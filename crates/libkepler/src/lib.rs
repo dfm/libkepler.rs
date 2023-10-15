@@ -1,6 +1,4 @@
-mod horner;
-pub mod householder;
-mod refiner;
+mod starter;
 
 // use num_traits::Float;
 
