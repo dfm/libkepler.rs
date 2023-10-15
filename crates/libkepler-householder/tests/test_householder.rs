@@ -10,7 +10,7 @@ macro_rules! test_algorithm {
         for n in 0..size {
             let ecc_anom = std::$t::consts::PI * (n as $t) / ((size - 1) as $t);
             let expected = $algo(ecc, mean_anom, ecc_anom);
-            let actual = kepler_householder_step!($order, $t)(ecc, mean_anom, ecc_anom);
+            let (actual, _) = kepler_householder_step!($order, $t)(ecc, mean_anom, ecc_anom);
             assert_abs_diff_eq!(actual, expected, epsilon = 10 as $t * $t::EPSILON);
         }
     };

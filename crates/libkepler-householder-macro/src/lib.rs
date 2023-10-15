@@ -38,13 +38,13 @@ pub fn kepler_householder_step(input: TokenStream) -> TokenStream {
     let ret = TokenStream2::from_str(&format!("d{}", order)).unwrap();
 
     quote!({
-        |ecc: #numeric_type, mean_anom: #numeric_type, ecc_anom: #numeric_type| -> #numeric_type {
+        |ecc: #numeric_type, mean_anom: #numeric_type, ecc_anom: #numeric_type| -> (#numeric_type, #numeric_type) {
             use num_traits::One;
             let ecc_sin = ecc * ecc_anom.sin();
             let ecc_cos = ecc * ecc_anom.cos();
             #function_derivatives
             #updates
-            #ret
+            (#ret, f0)
         }
     })
     .into()
