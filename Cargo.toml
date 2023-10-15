@@ -14,3 +14,10 @@ license = "Apache-2.0"
 num-traits = "0.2.16"
 approx = "0.5.1"
 rstest = "0.18.2"
+
+[profile.dev]
+opt-level = 3
+
+[profile.release]
+opt-level = 3
+lto = true
