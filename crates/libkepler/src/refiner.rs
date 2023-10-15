@@ -3,7 +3,8 @@ macro_rules! refine_iterative {
     ( $order:literal, $t:tt, $tol:expr, $max_iter:literal ) => {
         |ecc, mean_anom, ecc_anom| {
             let mut result = ecc_anom;
-            for _ in 0..$max_iter {
+            for n in 0..$max_iter {
+                println!("{}", n);
                 let (next, diff) = libkepler_householder::kepler_householder_step!($order, $t)(
                     ecc, mean_anom, result,
                 );
